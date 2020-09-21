@@ -15,6 +15,38 @@
     4. the ability to edit an existing task
 
     */
+    $(document).ready(function () {
+      const $textField = $('#description');
+      const $addButton = $('#add-button');
+      const $log         = $('#todo-list');
+
+      $addButton.click(()=>{
+        const $li = $('<li>', {
+        'text': `${$textField.val()}`,
+        'class': 'list-Item',
+        'id':`${$textField.val()}`
+        })
+        const $xButton = $('<button>', {
+          'text' : 'X',
+          'class' : 'delete',
+          'id' : `${$textField.val()}`,
+          'style': 'margin-left: 5px;'
+        })
+        $li.append($xButton);
+        $log.append($li);
+        $textField.val('');
+
+        $xButton.click((e)=>{
+          
+          $(`#${$(e.target).attr('id')}`)
+          $(e.target).parent().remove();
+        })
+      })
+
+
+
+
+    });
     </script>
     <style>
     #wrapper {
