@@ -10,8 +10,10 @@
     When it's clicked again, make the section show.
     (Make it toggle back and forth between hidden and show)
     */
-    $(function() {
-      // Write code here
+    $(document).ready(function () {
+      const $header = $('#section-header');
+      const $section = $('#section')
+      $header.click(() => $section.toggle())
     });
     </script>
 
