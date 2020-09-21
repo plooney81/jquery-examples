@@ -89,7 +89,7 @@
           $(e.target).parent().empty();
         })
 
-        // 4
+        // 4 - 1
         $editButton.click((e)=>{
           console.log('edit');
           $editButton.hide();
@@ -98,7 +98,7 @@
           $span.hide();
           $editInput.show()
         })
-
+        // 4 - 2
         $editInput.focusout((e)=>{
           $span.html(`${$editInput.val()}`)
           $editInput.val('');
