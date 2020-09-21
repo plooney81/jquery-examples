@@ -10,7 +10,9 @@
     */
     $(document).ready(function () {
       const $butt = $('#the-button');
-      $butt.html("Please click me")
+      $butt.click(function(){
+        $butt.html("Please click me")
+      });
     });
     </script>
   </head>
