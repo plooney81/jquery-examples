@@ -65,10 +65,10 @@
 
         $editInput.hide();
 
-        // $li.append($xButton);
-        // $li.append($checkBox);
-        // $li.append($delButton);
         $li.append($span);
+        $li.append($xButton);
+        $li.append($checkBox);
+        // $li.append($delButton);
         $li.append($editButton);
         $li.append($editInput);
         $log.append($li);
@@ -93,6 +93,8 @@
         $editButton.click((e)=>{
           console.log('edit');
           $editButton.hide();
+          $xButton.hide();
+          $checkBox.hide();
           $span.hide();
           $editInput.show()
         })
@@ -103,6 +105,8 @@
           $editInput.hide();
           $span.show();
           $editButton.show();
+          $xButton.show();
+          $checkBox.show();
         })
       })
 
