@@ -21,25 +21,85 @@
       const $log         = $('#todo-list');
 
       $addButton.click(()=>{
-        const $li = $('<li>', {
-        'text': `${$textField.val()}`,
-        'class': 'list-Item',
-        'id':`${$textField.val()}`
+        const $li = $('<li>')
+
+        const $span = $('<span>', {
+          'text': `${$textField.val()}`
         })
+
+        //1
         const $xButton = $('<button>', {
           'text' : 'X',
           'class' : 'delete',
           'id' : `${$textField.val()}`,
           'style': 'margin-left: 5px;'
         })
-        $li.append($xButton);
+
+        //2
+        const $checkBox = $('<input>', {
+          'type' : 'checkbox',
+          'class' : 'checkBox',
+          'style' : 'margin-left: 5px;'
+        })
+
+        //3 
+        const $delButton = $('<button>', {
+          'text': 'Delete Item',
+          'class' : 'delButton',
+          'style' : 'margin-left: 5px;'
+        })
+
+        // 4
+        const $editButton = $('<button>', {
+          'text': 'edit',
+          'class': 'editButton',
+          'style' : 'margin-left: 5px;'
+        })
+
+        //4
+        const $editInput = $('<input>', {
+          'type' : 'text',
+          'class' : 'textBox',
+          'style' : 'margin-left: 5px;',
+        })
+
+        $editInput.hide();
+
+        // $li.append($xButton);
+        // $li.append($checkBox);
+        // $li.append($delButton);
+        $li.append($span);
+        $li.append($editButton);
+        $li.append($editInput);
         $log.append($li);
         $textField.val('');
 
+        // 1
         $xButton.click((e)=>{
-          
-          $(`#${$(e.target).attr('id')}`)
           $(e.target).parent().remove();
+        })
+
+        // 2
+        $checkBox.click((e)=>{
+          $(e.target).parent().wrap("<strike>");
+        })
+
+        // 3
+        $delButton.click((e)=>{
+          $(e.target).parent().empty();
+        })
+
+        // 4
+        $editButton.click((e)=>{
+          console.log('edit');
+          // $(e.target).parent().attr('text', $('#description').val())
+          $editInput.show()
+        })
+
+        $editInput.focusout((e)=>{
+          $span.html(`${$editInput.val()}`)
+          $editInput.val('');
+          $editInput.hide();
         })
       })
 
