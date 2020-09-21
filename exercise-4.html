@@ -15,20 +15,22 @@
       const $clearButt = $('#clear-button');
       const $textField = $('#text-field');
       const $saveButton = $('#save-button');
-      const $ul         = $('#log');
+      const $log         = $('#log');
 
       $clearButt.click(()=>{
         $textField.val('');
       })
 
       $saveButton.click(()=>{
-        const $li         = $('<li>', {
-          'text': `${$textField.val()}`
+        const $li = $('<li>', {
+        'text': `${$textField.val()}`,
+        'class': 'list-Item',
+        'id':`${$textField.val('')}`
         })
-        $ul.append($li);
+        $log.append($li);
         $textField.val('');
       })
-      
+
     });
     </script>
   </head>

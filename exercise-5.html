@@ -5,14 +5,17 @@
     <title></title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
-    /*
-    Make it so that when you click on one of the links on this page,
-    instead of navigating the browser to that page, it renders that
-    page in the iframe below. Set the iframe's `src` attribute to a URL will cause it to render the page.
-    HINT: Lookup .attr()
-    */
-    $(function() {
-      // Write code here
+
+    $(document).ready(function () {
+      // const $anchors = ;
+      const $iFrame = $('#iframe');
+      $('a').on('click', (e)=>{
+        e.preventDefault();
+        // console.log(this.getAttribute('href'));
+        let $source = $(e.target).attr('href');
+        console.log($source);
+        $iFrame.attr('src', `${$source}`);
+      })
     });
     </script>
   </head>
