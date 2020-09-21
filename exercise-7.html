@@ -92,6 +92,8 @@
         // 4
         $editButton.click((e)=>{
           console.log('edit');
+          $editButton.hide();
+          $span.hide();
           $editInput.show()
         })
 
@@ -99,6 +101,8 @@
           $span.html(`${$editInput.val()}`)
           $editInput.val('');
           $editInput.hide();
+          $span.show();
+          $editButton.show();
         })
       })
 
