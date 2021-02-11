@@ -9,10 +9,17 @@
     Change the text of the button to "Please click me!". Putting your code in the document ready block is important.
     */
     $(document).ready(function () {
-      const $butt = $('#the-button');
-      $butt.click(function(){
-        $butt.html("Please click me")
-      });
+        const $mehButton = $('#the-button');
+        let newText = '';
+        $mehButton
+          .click(function(){
+            if($mehButton.text() === 'meh'){
+              newText = 'Please Click Me';
+            }else{
+              newText = 'meh'
+            }
+            $(this).text(newText)
+          })
     });
     </script>
   </head>

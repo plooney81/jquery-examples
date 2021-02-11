@@ -7,10 +7,9 @@
     <script>
     /* When the button is clicked, print "You clicked!" to the console. */
     $(document).ready(function () {
-      const $butt = $('#the-button');
-      $butt.click(function(){
-        console.log('You clicked!');
-      });
+      $('#the-button').on('click', () => {
+        console.log('You clicked!')
+      })
     });
     </script>
   </head>

@@ -6,17 +6,16 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>
 
-    $(document).ready(function () {
-      // const $anchors = ;
+    $(document).ready(() => {
       const $iFrame = $('#iframe');
-      $('a').on('click', (e)=>{
+      $('a').on('click', (e) => {
         e.preventDefault();
-        // console.log(this.getAttribute('href'));
-        let $source = $(e.target).attr('href');
-        console.log($source);
-        $iFrame.attr('src', `${$source}`);
+        const url = $(e.target).attr('href');
+        $iFrame.attr('src', `${url}`);
       })
     });
+
+
     </script>
   </head>
   <body>
